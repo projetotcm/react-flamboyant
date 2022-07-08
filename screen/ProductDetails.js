@@ -18,20 +18,20 @@ export default function ProductDetails({route}) {
   }
 
   return (
-    <SafeAreaView style={[styles.safeArea, {backgroundColor:'#2A672F' }]}>
+    <SafeAreaView style={[styles.safeArea, {backgroundColor:'#05362A' }]}>
      
         <Image
           style={styles.image}
           source={product.imagem}
         />
-        <View style={[styles.infoContainer, {backgroundColor:'#2A672F'}]}>
+        <View style={[styles.infoContainer, {backgroundColor:'#05362A'}]}>
           <Text style={[styles.nome, {color:'#FFF'}]}>{product.nome}</Text>
           <Text style={[styles.preco, {color:'#FF0000'}]}>R$ {product.preco}</Text>
           <Text style={[styles.descricao, {color:'#FFF'}]}>{product.descricao}</Text>
             <Button
             onPress={onAddToCart}
             title="Adicionar ao Carrinho"
-           color={'#98140F'}
+            color={'#98140F'}
           
             />
         </View>
@@ -41,7 +41,7 @@ export default function ProductDetails({route}) {
 }
 const styles = StyleSheet.create({
   card: {
-    backgroundColor:'#2A672F',
+    backgroundColor:'#05362A',
     borderRadius: 16,
     shadowOpacity: 0.2,
     shadowRadius: 4,

@@ -10,6 +10,7 @@ import CartProvider  from './Cart/CartContext';
 import Login from './screen/Login';
 import Cadastro from './screen/Cadastro';
 import TelaMenu from './screen/TelaMenu';
+import Pagamento from './screen/Pagamento';
 import {OleoScript_400Regular, useFonts} from  '@expo-google-fonts/oleo-script';
 import {Roboto_400Regular} from  '@expo-google-fonts/roboto';
 import AppLoading from 'expo-app-loading';
@@ -22,7 +23,8 @@ function MyStack() {
         <Stack.Screen options={{ headerTransparent: true, headerShown:false}} name="Login" component={Login} />
         <Stack.Screen options={{ headerTransparent: true, headerShown:false}} name="Cadastro" component={Cadastro}/>
         <Stack.Screen options={{ headerTransparent: true, headerShown:false}} name="TelaMenu" component={TelaMenu}/>
-    
+        <Stack.Screen options={{ headerTransparent: true, headerShown:false}} name="Pagamento" component={Pagamento}/>
+        
         <Stack.Screen name='ProductsList' component={ProductsList} 
           options={({ navigation }) => ({
             title: 'Produtos',

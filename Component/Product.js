@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   container:{
     flex:1,  
     width:'100%',
-    backgroundColor:'#2A672F' 
+    backgroundColor:'#05362A' 
   },
   produtoImg:{
     flexDirection:'row',

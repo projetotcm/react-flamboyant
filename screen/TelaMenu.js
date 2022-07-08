@@ -56,6 +56,7 @@ vegana, responsável, saudável, e acessível,
 criou o Restaurante Vegano Flamboyant.</Text>
 
 <Text style={specificStyle.title}>Aproveite nossas delícias veganas e sem crueldade. 💛</Text>
+      <br/>
       <Button
      buttonStyle={specificStyle.button}
      title={"ENTRE NA LOJA!"}

@@ -1,9 +1,9 @@
- import React, { useState } from 'react';
-import { StyleSheet, View , TouchableOpacity, TextInput} from 'react-native';
-import { Button, Text} from 'react-native-elements';
+import React, { useState } from 'react';
+import { StyleSheet, View , TextInput, ImageBackground, Dimensions} from 'react-native';
+import { Button,Text} from 'react-native-elements';
 import styles from '../style/estilo';
-import {Ionicons} from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { ScrollView } from 'react-native';
 
 
 
@@ -31,7 +31,6 @@ export default function Login({navigation}) {
           index: 0,
           routes: [{name: "TelaMenu"}]
       })
-    
   }
 }
 
@@ -41,27 +40,29 @@ export default function Login({navigation}) {
         routes: [{name: "Cadastro"}]
     })
   }
-  const Login = () => {
-    navigation.reset({
-        index: 0,
-        routes: [{name: "TelaMenu"}]
-    })
-  }
 
-  const ListaProduto = () => {
+  const Lista = () => {
     navigation.reset({
         index: 0,
         routes: [{name: "ProductsList"}]
     })
   }
 
-
   return (
-    <View style={[styles.container, specificStyle.specificContainer]}>
-     <View style={[styles.cardLogin, {backgroundColor:'white', borderRadius:'25px', width:'80%', height:'55%'}]}>
-     <Text style={[styles.text , {color:'#101010', justifyContent:'center', textAlign:'center', padding:30}]} h3>Login</Text>
-     
-     <br/>
+    <ScrollView style={{flex:1, backgroundColor:'#000'}}
+    showsVerticalScrollIndicator={false}>
+      <ImageBackground
+      source={require('../assets/cenoura.gif')}
+      style={{
+        height:Dimensions.get('window').height / 2.5,
+      }}></ImageBackground>
+      <View style={styles.bottoView}>
+        <View style={{padding:40, backgroundColor:'#05362A', borderRadius:'24px'}}>
+          <Text style={{color:'#FFFFFF', fontSize:34, textAlign:'center'}}>Login</Text>
+        
+      <View style={{backgroundColor:'#FFF', marginTop:140, borderRadius:'25px'}}>
+
+      <br/>
       <TextInput
         style={[styles.input, {backgroundColor:'#EBEBEB', width:'65%', height:'10%', padding:20 ,justifyContent:'center', alignItems:'center' ,border:'10%' ,borderRadius:'25px', marginLeft:'18%'}]}
         placeholder="E-mail"
@@ -79,15 +80,17 @@ export default function Login({navigation}) {
         inputStyle={specificStyle.input}
       />
 
+
       <br/>
       <Button style={[styles.button, {justfyContent:'center', alignItems:'center'}]}
         title="Login"
-        titleStyle={[styles.titulo]}
         buttonStyle={specificStyle.button}
-        onPress={() => Login()}
+        onPress={() => entrar()}
       />
+    
 
-      <br/>
+
+
       <br/>
       <View style={[styles.textCad1, { flexDirection:'row', justifyContent:'center', alignItems:'center'}]}>
         <Text style={[styles.textCad, { color:'#101010'}]}>Não possui Conta?</Text>
@@ -96,49 +99,43 @@ export default function Login({navigation}) {
       </View>
       </View>
       </View>
+      </View>
+    </ScrollView>
   );
 }
 
 
 const specificStyle = StyleSheet.create({
-  specificContainer:{
-    flex:1,
-    alignItems:'center',
-    justifyContent:'center',
-    backgroundColor:"#2A672F",
-    padding:10,
+ 
+  bottoView:{
+    flex:1.5,
+    backgroundColor:'#FFF',
+    bottom:50,
+    borderTopStartRadius:60,
+    borderTopEndRadius:60
   },
   button:{
     width: "50%",
     margintop:10,
     borderRadius: '25px',
+    borderColor:'#D90429',
     backgroundColor:'#98140F',
     alignItems: 'center',
     justfyContent: 'center',
   },
-  cardLogin: {
-    width: '60%',
-    height: '30%',
-    display: 'flex',
-    padding: '30px 35px',
-    justfyContent: 'center',
-    aligneItems: 'center',
-    flexDirection: 'column',
-},
-
-input:{
-  width:'60%',
-  height:'50px',
-  backgroundColor:'#EBEBEB',
-  color:'#101010',
-  padding:8,
-  fontSize:18
-},
-icon:{
-  width:'15%',
-  height:50,
-  justifyContent:'center',
-  alignItems:'center'
-},
+  input:{
+    width:'60%',
+    height:'50px',
+    backgroundColor:'#EBEBEB',
+    color:'#101010',
+    padding:8,
+    fontSize:18
+  },
+  icon:{
+    width:'15%',
+    height:50,
+    justifyContent:'center',
+    alignItems:'center'
+  },
 
 });

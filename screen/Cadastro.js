@@ -115,7 +115,7 @@ export default function Cadastro({navigation}) {
 
 const specificStyle = StyleSheet.create({
     specificContainer:{
-        backgroundColor:"#2A672F",
+        backgroundColor:"#05362A",
         padding:10
     },
     button:{
